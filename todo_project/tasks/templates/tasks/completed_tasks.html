@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Completed Tasks</title>
+    <style>
+      h1 {
+        background-color: violet;
+        text-align: center;
+      }
+      table {
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid black;
+      }
+      td {
+        padding: 5px 16px;
+      }
+      td a {
+        color: white;
+        padding: 3px 12px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Completed Tasks</h1>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+      {% for task in tasks %}
+      <tr>
+        <td>{{ task.taskTitle }}</td>
+        <td>{{ task.taskDescription }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="{% url 'show_tasks' %}">Back to Tasks</a>
+  </body>
+</html>
